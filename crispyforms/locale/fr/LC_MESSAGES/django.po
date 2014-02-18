@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: crispyforms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-18 17:45+0100\n"
+"PO-Revision-Date: 2014-02-17 16:57+0100\n"
+"Last-Translator: fvincent <francois.vincent01@gmail.com>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgctxt "language"
+msgid "French"
+msgstr "Français"
+
+msgctxt "language"
+msgid "English"
+msgstr "Anglais"
+
+msgid "Mr."
+msgstr "Mr"
+
+msgid "Mrs."
+msgstr "Mme"
+
+msgid "Ms."
+msgstr "Mle"
+
+msgid "username"
+msgstr "nom d'utilisateur"
+
+msgid "first name"
+msgstr "prénom"
+
+msgid "last name"
+msgstr "nom"
+
+msgid "email"
+msgstr "email"
+
+msgid "Creation date"
+msgstr "date de création"
+
+msgid "customer"
+msgstr "client"
+
+msgid "customers"
+msgstr "clients"
+
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Please enter your credentials"
+msgstr "Merci d'entrer vos nom d'utilisateur et mot de passe"
+
+msgid "Edit customer then save changes"
+msgstr "Modifier client puis sauvegarder"
+
+msgid "Save changes"
+msgstr "Sauvegarder"
+
+msgid "Enter new customer then submit"
+msgstr "Entrer npoouveau client puis sauvegarder"
+
+msgid "Submit"
+msgstr "Sauvegarder"
+
+msgid "Welcome,"
+msgstr "Bienvenue,"
+
+msgid "logout"
+msgstr "Déconnexion"
+
+msgid "English"
+msgstr "Anglais"
+
+msgid "French"
+msgstr "Français"
+
+msgid "Welcome to Crispyforms demonstration platform"
+msgstr "Bienvenue sur la plate-forme de démonstration de Crispyforms"
+
+msgid "Login User"
+msgstr "Connecter Utilisateur"
+
+msgid "Edit Customer"
+msgstr "Modifier Client"
+
+msgid "Create Customer"
+msgstr "Créer un client"
+
+msgid "Customers list"
+msgstr "Liste des clients"
+
+msgid "Create new"
+msgstr "Créer nouveau"
+
+msgid "customers."
+msgstr "clients."
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "First name"
+msgstr "Prénom"
+
+msgid "Last name"
+msgstr "Nom"
+
+msgid "Email"
+msgstr "Courriel"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "No customer found."
+msgstr "Auncun client trouvé."

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n crispy_forms_tags %}
+
+{% block bodytitle %}
+    {% trans 'Login User' %}
+{% endblock %}
+
+{% block content %}
+
+    {% crispy form %}
+
+{% endblock %}

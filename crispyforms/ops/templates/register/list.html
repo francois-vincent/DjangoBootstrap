@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load i18n pagination_tags %}
+
+{% block bodytitle %}
+    {% trans 'Customers list' %}
+{% endblock %}
+
+{% block navside %}
+    <a href="{% url 'register:create' %}">{% trans "Create new" %}</a>
+{% endblock %}
+
+{% block content %}
+
+{% if customers %}
+
+<p><strong>{{ customers|length }}</strong> {% trans "customers." %}</p>
+
+{% autopaginate customers 2 %}
+{% paginate %}
+
+<table class="table table-bordered table-hover">
+<thead>
+    <tr>
+        <th>{% trans "Username" %}</th>
+        <th>{% trans "Title" %}</th>
+        <th>{% trans "First name" %}</th>
+        <th>{% trans "Last name" %}</th>
+        <th>{% trans "Email" %}</th>
+        <th>{% trans "Date" %}</th>
+    </tr>
+</thead>
+<tbody>
+    {% for customer in customers %}
+    <tr onclick="document.location='{% url 'register:edit' customer.id %}';">
+        <td><a href="{% url 'register:edit' customer.id %}">{{ customer.username }}</a></td>
+        <td>{{ customer.get_title_display }}</td>
+        <td>{{ customer.first_name|default:"" }}</td>
+        <td>{{ customer.last_name|default:"" }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.creation_date|date:"SHORT_DATE_FORMAT" }}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+
+{% paginate %}
+
+{% else %}
+<p>{% trans "No customer found." %}</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+# Compiled/auto-generated
+*.pyc
+*.pyo
+*.mo
+crispyforms/static/
+logs/
+
+# Editor files
+.idea/
+
+# Environment
+venv/

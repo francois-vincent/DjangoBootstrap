@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n crispy_forms_tags %}
+
+{% block bodytitle %}
+    {% if customer %}
+        {% trans 'Edit Customer' %}
+    {% else %}
+        {% trans 'Create Customer' %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+    {% crispy form %}
+
+{% endblock %}

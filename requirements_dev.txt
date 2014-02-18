@@ -1,0 +1,6 @@
+-r requirements.txt
+
+factory_boy>=1.1.4
+
+django-debug-toolbar>=1.0
+django-extensions
