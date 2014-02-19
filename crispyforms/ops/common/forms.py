@@ -30,6 +30,6 @@ class AuthenticateForm(BootstrapForm):
                 'password',
             ),
             FormActions(
-                Submit('save', u'Login'),
+                Submit('save', _(u'Login')),
             )
         )

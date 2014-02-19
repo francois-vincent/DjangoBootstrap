@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render
 from django.utils import translation
+from django.utils.translation import ugettext_lazy as _
 
 from forms import AuthenticateForm
 
@@ -53,10 +54,10 @@ def login_view(request):
                 next = request.REQUEST.get('next', None)
                 return http.HttpResponseRedirect(next)
             else:
-                msg = u"Oops, this user is not active !"
+                msg = _(u"Oops, this user is not active !")
                 messages.warning(request, msg)
         else:
-            msg = u"Oops, the Username / password pair does not match !"
+            msg = _(u"Oops, the username / password pair does not match !")
             messages.warning(request, msg)
 
     return render(request, 'common/login.html', {'form': AuthenticateForm(request.POST or None)})

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: crispyforms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-18 17:45+0100\n"
+"POT-Creation-Date: 2014-02-19 12:31+0100\n"
 "PO-Revision-Date: 2014-02-17 16:57+0100\n"
 "Last-Translator: fvincent <francois.vincent01@gmail.com>\n"
 "Language-Team: \n"
@@ -59,6 +59,15 @@ msgstr "Mot de passe"
 msgid "Please enter your credentials"
 msgstr "Merci d'entrer vos nom d'utilisateur et mot de passe"
 
+msgid "Login"
+msgstr "Connecter"
+
+msgid "Oops, this user is not active !"
+msgstr "Oups, cet utilisateur n'est pas actif !"
+
+msgid "Oops, the username / password pair does not match !"
+msgstr "Oups, nom d'utilisateur et mot de passe ne correspondent pas !"
+
 msgid "Edit customer then save changes"
 msgstr "Modifier client puis sauvegarder"
 
@@ -71,11 +80,17 @@ msgstr "Entrer npoouveau client puis sauvegarder"
 msgid "Submit"
 msgstr "Sauvegarder"
 
+msgid "Click to logout"
+msgstr "Cliquer pour se déconnecter"
+
 msgid "Welcome,"
 msgstr "Bienvenue,"
 
 msgid "logout"
 msgstr "Déconnexion"
+
+msgid "change language"
+msgstr "changer de langue"
 
 msgid "English"
 msgstr "Anglais"
@@ -85,6 +100,12 @@ msgstr "Français"
 
 msgid "Welcome to Crispyforms demonstration platform"
 msgstr "Bienvenue sur la plate-forme de démonstration de Crispyforms"
+
+msgid "Customers"
+msgstr "Clients"
+
+msgid "This is a simple demonstration site for Django and Bootstrap"
+msgstr "Simple site de démonstration de Django et Bootstrap"
 
 msgid "Login User"
 msgstr "Connecter Utilisateur"

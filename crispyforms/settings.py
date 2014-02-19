@@ -240,10 +240,9 @@ LOGGING = {
 CRISPY_FAIL_SILENTLY = not DEBUG
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-# django-bootstrap3 settings
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# BOOTSTRAP3 = {
-#     'horizontal_label_class': 'col-md-2',
-#     'horizontal_field_class': 'col-md-4',
-# }
+# linaro-pagination settings, see http://pythonhosted.org/linaro-django-pagination/usage.html#optional-settings
+# ~~~~~~~~~~~~~~~~~~~~~
+
+PAGINATION_DISPLAY_DISABLED_PREVIOUS_LINK = True
+PAGINATION_DISPLAY_DISABLED_NEXT_LINK = True

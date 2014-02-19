@@ -13,10 +13,10 @@
 
 {% if customers %}
 
-<p><strong>{{ customers|length }}</strong> {% trans "customers." %}</p>
+<p><span class="badge">{{ customers|length }}</span> {% trans "customers." %}</p>
 
 {% autopaginate customers 2 %}
-{% paginate %}
+{% paginate using "pagination/bootstrap.html" %}
 
 <table class="table table-bordered table-hover">
 <thead>
@@ -44,7 +44,7 @@
 </table>
 
 
-{% paginate %}
+{% paginate using "pagination/bootstrap.html"%}
 
 {% else %}
 <p>{% trans "No customer found." %}</p>

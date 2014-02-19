@@ -6,5 +6,10 @@
     {% trans 'Welcome to Crispyforms demonstration platform' %}
 {% endblock %}
 
+{% block navside %}
+    <a href="{% url 'register:list' %}">{% trans "Customers" %}</a>
+{% endblock %}
+
 {% block content %}
+        <h4>{% trans 'This is a simple demonstration site for Django and Bootstrap' %} </h4>
 {% endblock %}

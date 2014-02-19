@@ -24,12 +24,12 @@
                     <div class="nav-collapse">
                         <ul  class="nav pull-right">
                             <li class="pull-right dropdown">
-                                <a class="user-tool" href="#" title="" data-toggle="dropdown">
-                                    <i class="icon-bs-user"></i>
+                                <a class="user-tool" href="#" title="{% trans 'Click to logout' %}" data-toggle="dropdown">
                                     {% trans 'Welcome,' %} {% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %}
+                                    <i class="glyphicon glyphicon-cog"></i>
                                 </a>
-                                <div class="dropdown-menu" role="menu">
-                                    <p class="text-center">{% spaceless %}
+                                <div class="dropdown-menu" role="menu" style="height: 40px">
+                                    <p class="text-center" style="margin-top: 5px">{% spaceless %}
                                         <a href="{% url 'logout' %}">{% trans 'logout' %}</a>
                                     {% endspaceless %}</p>
                                 </div>
@@ -41,13 +41,13 @@
         </div>
     </div>
 
-    <div id="main-content" class="container-fluid">
+    <div class="container-fluid">
         <div class="row bandeau">
             <div class="col-sm-offset-1 col-sm-10">
                 <h2 class='text-center'>{% block bodytitle %}{% endblock %}</h2>
             </div>
             <div class="col-sm-1 ">
-            <select class="form-control input-sm language" onchange="change_language(this)">
+            <select class="form-control input-sm language" title="{% trans 'change language' %}" onchange="change_language(this)">
               <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>{% trans 'English' %}</option>
               <option value="fr" {% if LANGUAGE_CODE == 'fr' %}selected{% endif %}>{% trans 'French' %}</option>
             </select>
