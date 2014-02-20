@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Django settings for crispyforms project.
 
 from datetime import datetime
@@ -41,6 +42,7 @@ CONTROL_APPS = (
 OPS_APPS = (
     'ops.common',
     'ops.register',
+    'utils',
 )
 
 DJANGO_APPS = (
@@ -246,3 +248,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 PAGINATION_DISPLAY_DISABLED_PREVIOUS_LINK = True
 PAGINATION_DISPLAY_DISABLED_NEXT_LINK = True
+
+
+# HTML5 layout template
+# ~~~~~~~~~~~~~~~~~~~~~
+
+LAYOUT_TEMPLATE = "bootstrap_layout.html"

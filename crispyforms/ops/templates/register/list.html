@@ -1,15 +1,15 @@
-{% extends "base.html" %}
+{% extends "home.html" %}
 {% load i18n pagination_tags %}
 
-{% block bodytitle %}
+{% block body_page_title %}
     {% trans 'Customers list' %}
 {% endblock %}
 
-{% block navside %}
-    <a href="{% url 'register:create' %}">{% trans "Create new" %}</a>
+{% block body_page_leftbar %}
+    <a href="{% url 'register:create' %}" class="list-group-item">{% trans "Create new" %}</a>
 {% endblock %}
 
-{% block content %}
+{% block body_page_content %}
 
 {% if customers %}
 

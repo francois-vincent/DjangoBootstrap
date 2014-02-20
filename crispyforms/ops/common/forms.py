@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2011-2014 Polyconseil SAS. All rights reserved.
 
 from django.conf import settings
 from django import forms

@@ -1,15 +1,15 @@
-{% extends "base.html" %}
+{% extends "bootstrap_layout.html" %}
 {% load i18n %}
 
 
-{% block bodytitle %}
+{% block body_page_title %}
     {% trans 'Welcome to Crispyforms demonstration platform' %}
 {% endblock %}
 
-{% block navside %}
-    <a href="{% url 'register:list' %}">{% trans "Customers" %}</a>
+{% block body_page_leftbar %}
+    <a href="{% url 'register:list' %}" class="list-group-item">{% trans "Customers" %}</a>
 {% endblock %}
 
-{% block content %}
+{% block body_page_content %}
         <h4>{% trans 'This is a simple demonstration site for Django and Bootstrap' %} </h4>
 {% endblock %}

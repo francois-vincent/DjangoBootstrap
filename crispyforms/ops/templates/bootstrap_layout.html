@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+
+{% block head_meta_httpequiv %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+{% endblock %}
+
+{% block head_meta_viewport %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% endblock %}
+
+{% block head_css_site %}
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/navbar-fixed-top.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body_top_navbar %}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Bootstrap Test</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="{% url 'register:list' %}">Customers</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% if user.is_authenticated %}{% trans 'Welcome,' %} {% firstof user.first_name user.username %}{% else %}{% trans 'Please register' %}{% endif %} <i class="glyphicon glyphicon-cog"></i></a>
+              <ul class="dropdown-menu">
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">{% trans 'logout' %}</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">{% trans 'login' %}</a></li>
+                {% endif %}
+                <li class="divider"></li>
+                <li><a href="{% url 'change_language' 'fr' %}">{% if LANGUAGE_CODE == 'fr' %}&raquo;{% else %}&nbsp;&nbsp;{% endif %}</span>{% trans 'French' %}</a></li>
+                <li><a href="{% url 'change_language' 'en' %}"><span>{% if LANGUAGE_CODE == 'en' %}&raquo;{% else %}&nbsp;&nbsp;{% endif %}</span>{% trans 'English' %}</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+{% endblock %}
+
+{% block body_bandeau %}
+    <div class="container-fluid">
+        <div class="page-header">
+          <h1 class='text-center'>{% block body_page_title %}{% endblock %}</h1>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}
+
+{% block body_page %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-lg-2">
+                <div class="list-group" id="sidebar">
+                {% block body_page_leftbar %}{% endblock %}
+                </div>
+            </div>
+            <div class="col-sm-9 col-lg-10">
+                <div class="row">
+                    <div id="content-messages" class="col-lg-8">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="content-main" class="col-lg-12">
+                        {% block body_page_content %}{% endblock %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="content-footer" class="col-lg-12">
+                        {% block body_page_footer %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer_js_site %}
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+{% endblock %}

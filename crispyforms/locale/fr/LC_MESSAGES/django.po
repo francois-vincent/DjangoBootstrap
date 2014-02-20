@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: crispyforms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-19 12:31+0100\n"
+"POT-Creation-Date: 2014-02-20 16:04+0100\n"
 "PO-Revision-Date: 2014-02-17 16:57+0100\n"
 "Last-Translator: fvincent <francois.vincent01@gmail.com>\n"
 "Language-Team: \n"
@@ -75,28 +75,34 @@ msgid "Save changes"
 msgstr "Sauvegarder"
 
 msgid "Enter new customer then submit"
-msgstr "Entrer npoouveau client puis sauvegarder"
+msgstr "Entrer nouveau client puis sauvegarder"
 
 msgid "Submit"
 msgstr "Sauvegarder"
 
-msgid "Click to logout"
-msgstr "Cliquer pour se déconnecter"
-
 msgid "Welcome,"
 msgstr "Bienvenue,"
 
-msgid "logout"
-msgstr "Déconnexion"
+msgid "Please register"
+msgstr "Connectez-vous"
 
-msgid "change language"
-msgstr "changer de langue"
+msgid "logout"
+msgstr "déconnexion"
+
+msgid "login"
+msgstr "connexion"
+
+msgid "French"
+msgstr "Français"
 
 msgid "English"
 msgstr "Anglais"
 
-msgid "French"
-msgstr "Français"
+msgid "Click to logout"
+msgstr "Cliquer pour se déconnecter"
+
+msgid "change language"
+msgstr "changer de langue"
 
 msgid "Welcome to Crispyforms demonstration platform"
 msgstr "Bienvenue sur la plate-forme de démonstration de Crispyforms"

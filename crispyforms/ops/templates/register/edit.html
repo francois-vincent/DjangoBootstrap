@@ -1,7 +1,7 @@
-{% extends "base.html" %}
+{% extends "home.html" %}
 {% load i18n crispy_forms_tags %}
 
-{% block bodytitle %}
+{% block body_page_title %}
     {% if customer %}
         {% trans 'Edit Customer' %}
     {% else %}
@@ -9,7 +9,7 @@
     {% endif %}
 {% endblock %}
 
-{% block content %}
+{% block body_page_content %}
 
     {% crispy form %}
 
