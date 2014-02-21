@@ -38,7 +38,6 @@
             </button>
             <a href="{% url 'register:edit' customer.id %}">{{ customer.username }}</a>
         </td>
-        {% with edit_link={% url 'register:edit' customer.id %}
         <td onclick="document.location='{% url 'register:edit' customer.id %}';">{{ customer.get_title_display }}</td>
         <td onclick="document.location='{% url 'register:edit' customer.id %}';">{{ customer.first_name|default:"" }}</td>
         <td onclick="document.location='{% url 'register:edit' customer.id %}';">{{ customer.last_name|default:"" }}</td>
