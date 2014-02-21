@@ -248,9 +248,3 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 PAGINATION_DISPLAY_DISABLED_PREVIOUS_LINK = True
 PAGINATION_DISPLAY_DISABLED_NEXT_LINK = True
-
-
-# HTML5 layout template
-# ~~~~~~~~~~~~~~~~~~~~~
-
-LAYOUT_TEMPLATE = "bootstrap_layout.html"

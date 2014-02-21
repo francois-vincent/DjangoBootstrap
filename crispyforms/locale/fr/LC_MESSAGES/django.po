@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: crispyforms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-20 16:04+0100\n"
+"POT-Creation-Date: 2014-02-21 12:54+0100\n"
 "PO-Revision-Date: 2014-02-17 16:57+0100\n"
 "Last-Translator: fvincent <francois.vincent01@gmail.com>\n"
 "Language-Team: \n"
@@ -44,6 +44,9 @@ msgstr "email"
 msgid "Creation date"
 msgstr "date de création"
 
+msgid "Active"
+msgstr "Actif"
+
 msgid "customer"
 msgstr "client"
 
@@ -61,6 +64,10 @@ msgstr "Merci d'entrer vos nom d'utilisateur et mot de passe"
 
 msgid "Login"
 msgstr "Connecter"
+
+#, python-format
+msgid "Welcome back %s !"
+msgstr "Bonjour %s !"
 
 msgid "Oops, this user is not active !"
 msgstr "Oups, cet utilisateur n'est pas actif !"
@@ -80,6 +87,19 @@ msgstr "Entrer nouveau client puis sauvegarder"
 msgid "Submit"
 msgstr "Sauvegarder"
 
+#, python-format
+msgid "Customer <strong>%s</strong> deleted !"
+msgstr "Le client <strong>%s</strong> a été supprimé !"
+
+msgid "Could not delete customer."
+msgstr "Impossible de supprimer ce client."
+
+msgid "Home"
+msgstr "Intro"
+
+msgid "Customers"
+msgstr "Clients"
+
 msgid "Welcome,"
 msgstr "Bienvenue,"
 
@@ -98,17 +118,8 @@ msgstr "Français"
 msgid "English"
 msgstr "Anglais"
 
-msgid "Click to logout"
-msgstr "Cliquer pour se déconnecter"
-
-msgid "change language"
-msgstr "changer de langue"
-
 msgid "Welcome to Crispyforms demonstration platform"
 msgstr "Bienvenue sur la plate-forme de démonstration de Crispyforms"
-
-msgid "Customers"
-msgstr "Clients"
 
 msgid "This is a simple demonstration site for Django and Bootstrap"
 msgstr "Simple site de démonstration de Django et Bootstrap"
@@ -145,6 +156,21 @@ msgstr "Courriel"
 
 msgid "Date"
 msgstr "Date"
+
+msgid "Delete customer"
+msgstr "Supprimer un client"
+
+msgid "You are about to delete Customer"
+msgstr "Vous êtes sur le point de supprimer le client"
+
+msgid "Do you want to proceed ?"
+msgstr "Voulez-vous continuer ?"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Proceed"
+msgstr "Supprimer"
 
 msgid "No customer found."
 msgstr "Auncun client trouvé."

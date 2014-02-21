@@ -51,12 +51,11 @@ def login_view(request):
             if user.is_active:
                 login(request, user)
                 next = request.REQUEST.get('next', None)
+                messages.info(request, _(u'Welcome back %s !') % user)
                 return http.HttpResponseRedirect(next)
             else:
-                msg = _(u"Oops, this user is not active !")
-                messages.warning(request, msg)
+                messages.warning(request, _(u"Oops, this user is not active !"))
         else:
-            msg = _(u"Oops, the username / password pair does not match !")
-            messages.warning(request, msg)
+            messages.warning(request, _(u"Oops, the username / password pair does not match !"))
 
     return render(request, 'common/login.html', {'form': AuthenticateForm(request.POST or None)})

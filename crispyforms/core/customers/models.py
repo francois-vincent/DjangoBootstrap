@@ -12,6 +12,12 @@ TITLE_CHOICES = (
 )
 
 
+class CustomerManager(models.Manager):
+
+    def active(self):
+        return self.filter(is_active=True)
+
+
 class Customer(models.Model):
     username = models.CharField(_(u"username"), unique=True, max_length=32)
     title = models.CharField(max_length=3, choices=TITLE_CHOICES, blank=True)
@@ -19,8 +25,9 @@ class Customer(models.Model):
     last_name = models.CharField(_(u"last name"), blank=True, max_length=32)
     email = models.CharField(_(u"email"), max_length=64)
     creation_date = models.DateTimeField(_(u"Creation date"), default=timezone.now, editable=False)
+    is_active = models.BooleanField(_(u'Active'), default=True)
 
-    objects = models.Manager()
+    objects = CustomerManager()
 
     class Meta:
         verbose_name = _(u"customer")
@@ -34,3 +41,7 @@ class Customer(models.Model):
 
     def friendly(self):
         return self.first_name if self.first_name else self.username
+
+    def set_inactive(self):
+        self.is_active = False
+        self.save()

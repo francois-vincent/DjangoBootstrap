@@ -12,6 +12,7 @@
 {% block head_css_site %}
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'bootstrap/css/navbar-fixed-top.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap_style.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block body_top_navbar %}
@@ -25,12 +26,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Bootstrap Test</a>
+          <a class="navbar-brand" id="navbar-brand" href="/">Bootstrap_Test</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="{% url 'register:list' %}">Customers</a></li>
+            <li class="active"><a href="/"><i class="glyphicon glyphicon-home"></i> {% trans 'Home' %}</a></li>
+            <li><a href="{% url 'register:list' %}">{% trans 'Customers' %}</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -42,8 +43,8 @@
                 <li><a href="{% url 'login' %}">{% trans 'login' %}</a></li>
                 {% endif %}
                 <li class="divider"></li>
-                <li><a href="{% url 'change_language' 'fr' %}">{% if LANGUAGE_CODE == 'fr' %}&raquo;{% else %}&nbsp;&nbsp;{% endif %}</span>{% trans 'French' %}</a></li>
-                <li><a href="{% url 'change_language' 'en' %}"><span>{% if LANGUAGE_CODE == 'en' %}&raquo;{% else %}&nbsp;&nbsp;{% endif %}</span>{% trans 'English' %}</a></li>
+                <li><a href="{% url 'change_language' 'fr' %}">{% if LANGUAGE_CODE == 'fr' %}&raquo;{% else %}&nbsp;&nbsp;{% endif %}{% trans 'French' %}</a></li>
+                <li><a href="{% url 'change_language' 'en' %}">{% if LANGUAGE_CODE == 'en' %}&raquo;{% else %}&nbsp;&nbsp;{% endif %}{% trans 'English' %}</a></li>
               </ul>
             </li>
           </ul>
@@ -73,7 +74,7 @@
                     <div id="content-messages" class="col-lg-8">
                     {% if messages %}
                         {% for message in messages %}
-                            <div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+                            <div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message|safe }}</div>
                         {% endfor %}
                     {% endif %}
                     </div>

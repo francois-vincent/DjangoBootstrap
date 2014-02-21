@@ -33,3 +33,4 @@ class CustomerForm(BootstrapModelForm):
 
     class Meta:
         model = customers_models.Customer
+        fields = ['username', 'title', 'first_name', 'last_name', 'email']

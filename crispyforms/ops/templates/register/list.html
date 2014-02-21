@@ -15,10 +15,10 @@
 
 <p><span class="badge">{{ customers|length }}</span> {% trans "customers." %}</p>
 
-{% autopaginate customers 2 %}
+{% autopaginate customers 40 %}
 {% paginate using "pagination/bootstrap.html" %}
 
-<table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover table-curved">
 <thead>
     <tr>
         <th>{% trans "Username" %}</th>
@@ -31,18 +31,44 @@
 </thead>
 <tbody>
     {% for customer in customers %}
-    <tr onclick="document.location='{% url 'register:edit' customer.id %}';">
-        <td><a href="{% url 'register:edit' customer.id %}">{{ customer.username }}</a></td>
-        <td>{{ customer.get_title_display }}</td>
-        <td>{{ customer.first_name|default:"" }}</td>
-        <td>{{ customer.last_name|default:"" }}</td>
-        <td>{{ customer.email }}</td>
-        <td>{{ customer.creation_date|date:"SHORT_DATE_FORMAT" }}</td>
+    <tr>
+        <td>
+            <button class="btn btn-default btn-sm pull-right" onclick="open_delete_modal('{{ customer }}', '{{ customer.id }}');">
+              <i class="glyphicon glyphicon-trash"></i>
+            </button>
+            <a href="{% url 'register:edit' customer.id %}">{{ customer.username }}</a>
+        </td>
+        {% with edit_link={% url 'register:edit' customer.id %}
+        <td onclick="document.location='{% url 'register:edit' customer.id %}';">{{ customer.get_title_display }}</td>
+        <td onclick="document.location='{% url 'register:edit' customer.id %}';">{{ customer.first_name|default:"" }}</td>
+        <td onclick="document.location='{% url 'register:edit' customer.id %}';">{{ customer.last_name|default:"" }}</td>
+        <td onclick="document.location='{% url 'register:edit' customer.id %}';">{{ customer.email }}</td>
+        <td onclick="document.location='{% url 'register:edit' customer.id %}';">{{ customer.creation_date|date:"SHORT_DATE_FORMAT" }}</td>
     </tr>
+    <div class="hidden" id="customer_delete_url_{{ customer.id }}">{% url 'register:delete' customer.id %}</div>
     {% endfor %}
 </tbody>
 </table>
 
+<div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">{% trans 'Delete customer' %}</h4>
+      </div>
+      <div class="modal-body">
+        <p>{% trans 'You are about to delete Customer' %} <strong id="delete_modal_customer"></strong></p>
+        <p>{% trans 'Do you want to proceed ?' %}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{% trans 'Cancel' %}</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="document.location=$('#customer_delete_url').text();">{% trans 'Proceed' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hidden" id="customer_delete_url"></div>
 
 {% paginate using "pagination/bootstrap.html"%}
 
@@ -50,4 +76,14 @@
 <p>{% trans "No customer found." %}</p>
 {% endif %}
 
+{% endblock %}
+
+{% block footer_js_page %}
+<script>
+    open_delete_modal = function(name, id) {
+        $('#delete_modal_customer').text(name)
+        $('#customer_delete_url').text($('#customer_delete_url_'+id).text())
+        $('#delete_modal').modal()
+    }
+</script>
 {% endblock %}
