@@ -30,8 +30,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/"><i class="glyphicon glyphicon-home"></i> {% trans 'Home' %}</a></li>
-            <li><a href="{% url 'register:list' %}">{% trans 'Customers' %}</a></li>
+            <li {% if 'customer' not in request.path %}class="active"{% endif %}><a href="/"><i class="glyphicon glyphicon-home"></i> {% trans 'Home' %}</a></li>
+            <li {% if 'customer' in request.path %}class="active"{% endif %}><a href="{% url 'register:list' %}">{% trans 'Customers' %}</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
