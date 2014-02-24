@@ -17,6 +17,15 @@ class CustomerManager(models.Manager):
     def active(self):
         return self.filter(is_active=True)
 
+    def search(self, pattern):
+        if pattern:
+            return self.active().filter(
+                models.Q(username__icontains=pattern) |
+                models.Q(first_name__icontains=pattern) |
+                models.Q(last_name__icontains=pattern),
+            )
+        return self.active()
+
 
 class Customer(models.Model):
     username = models.CharField(_(u"username"), unique=True, max_length=32)

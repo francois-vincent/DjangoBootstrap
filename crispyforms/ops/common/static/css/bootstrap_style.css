@@ -35,3 +35,7 @@ table > thead > tr {
 .table-curved > :last-child > :last-child > :last-child {
     border-radius: 0 0 6px 0;
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+-webkit-appearance: searchfield-cancel-button;
+}

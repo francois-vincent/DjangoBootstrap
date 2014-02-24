@@ -22,17 +22,19 @@
         {% block head_css_site %}{% endblock %}
         {% block head_css_page %}{% endblock %}
     {% endblock %}
-    {% block head_js %}{% endblock %}
+    {% block head_js %}
+        <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    {% endblock %}
 </head>
 <body>
     {% block body_top_navbar %}{% endblock %}
     {% block body_bandeau %}{% endblock %}
     {% block body_page %}{% endblock %}
     {% block body_footer %}{% endblock %}
-</body>
+
     {% block footer_js %}
-        <script src="{% static 'jquery/jquery.js' %}"></script>
         {% block footer_js_site %}{% endblock %}
         {% block footer_js_page %}{% endblock %}
     {% endblock %}
+</body>
 </html>

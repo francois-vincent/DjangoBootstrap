@@ -13,8 +13,9 @@ from forms import CustomerForm
 
 @login_required
 def list_customers(request):
-    customers = customer_models.Customer.objects.active()
-    return render(request, 'register/list.html', {'customers': customers})
+    query = request.GET.get('q', None)
+    customers = customer_models.Customer.objects.search(query)
+    return render(request, 'register/list.html', {'query': query, 'customers': customers})
 
 
 @login_required

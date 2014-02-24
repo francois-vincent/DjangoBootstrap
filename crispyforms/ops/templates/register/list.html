@@ -11,12 +11,32 @@
 
 {% block body_page_content %}
 
+<form action="#" method="get">
+    <div class="row">
+      <div class="col-lg-8">
+        {% if customers %}
+        <p><span class="badge">{{ customers|length }}</span> {% trans "customers." %}</p>
+        {% else %}
+        <p>{% trans "No customer found." %}</p>
+        {% endif %}
+      </div>
+      <div class="col-lg-4">
+        <div class="input-group">
+          <input id="query_text" type="search" class="form-control clearable" name="q" value="{{ query|default:'' }}">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">{% trans 'Search' %}</button>
+          </span>
+        </div>
+      </div>
+    </div>
+</form>
+
 {% if customers %}
 
-<p><span class="badge">{{ customers|length }}</span> {% trans "customers." %}</p>
-
 {% autopaginate customers 40 %}
+<div style="min-height: 20px">
 {% paginate using "pagination/bootstrap.html" %}
+</div>
 
 <table class="table table-bordered table-hover table-curved">
 <thead>
@@ -69,10 +89,10 @@
 </div>
 <div class="hidden" id="customer_delete_url"></div>
 
-{% paginate using "pagination/bootstrap.html"%}
+<div style="min-height: 20px">
+{% paginate using "pagination/bootstrap.html" %}
+</div>
 
-{% else %}
-<p>{% trans "No customer found." %}</p>
 {% endif %}
 
 {% endblock %}
@@ -83,6 +103,6 @@
         $('#delete_modal_customer').text(name)
         $('#customer_delete_url').text($('#customer_delete_url_'+id).text())
         $('#delete_modal').modal()
-    }
+    };
 </script>
 {% endblock %}
