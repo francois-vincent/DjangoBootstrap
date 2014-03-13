@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) 2011-2014 Polyconseil SAS. All rights reserved.
 
-from django import forms
 from django.core.urlresolvers import reverse
 
 from crispy_forms.layout import Layout, Fieldset, Submit, Button

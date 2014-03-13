@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: crispyforms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-21 12:54+0100\n"
+"POT-Creation-Date: 2014-03-13 19:58+0100\n"
 "PO-Revision-Date: 2014-02-17 16:57+0100\n"
 "Last-Translator: fvincent <francois.vincent01@gmail.com>\n"
 "Language-Team: \n"
@@ -88,6 +88,10 @@ msgid "Submit"
 msgstr "Sauvegarder"
 
 #, python-format
+msgid "Customer <strong>%s</strong> modified !"
+msgstr "Le client <strong>%s</strong> a été modifié !"
+
+#, python-format
 msgid "Customer <strong>%s</strong> deleted !"
 msgstr "Le client <strong>%s</strong> a été supprimé !"
 
@@ -142,6 +146,12 @@ msgstr "Créer nouveau"
 msgid "customers."
 msgstr "clients."
 
+msgid "No customer found."
+msgstr "Aucun client trouvé."
+
+msgid "Search"
+msgstr "Recherche"
+
 msgid "Title"
 msgstr "Titre"
 
@@ -171,6 +181,3 @@ msgstr "Annuler"
 
 msgid "Proceed"
 msgstr "Supprimer"
-
-msgid "No customer found."
-msgstr "Auncun client trouvé."

@@ -32,17 +32,14 @@ def create_or_edit_customer(request, customer_id=None):
     form = CustomerForm(request.POST or None, instance=customer, intro=intro, submit=submit)
     if form.is_valid():
         form.save()
+        messages.info(request, _(u'Customer <strong>%s</strong> modified !') % customer)
         return redirect('register:list')
     return render(request, 'register/edit.html', {'form': form, 'customer': customer})
 
 
 @login_required
 def delete_customer(request, customer_id):
-    next = request.REQUEST.get('next', None)
-    if not next:
-        next = request.META.get('HTTP_REFERER', None)
-    if not next:
-        next = '/'
+    next = request.REQUEST.get('next', None) or request.META.get('HTTP_REFERER', None) or '/'
     response = http.HttpResponseRedirect(next)
 
     try:
