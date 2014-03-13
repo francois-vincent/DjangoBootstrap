@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: crispyforms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-13 19:58+0100\n"
+"POT-Creation-Date: 2014-03-13 20:20+0100\n"
 "PO-Revision-Date: 2014-02-17 16:57+0100\n"
 "Last-Translator: fvincent <francois.vincent01@gmail.com>\n"
 "Language-Team: \n"
@@ -92,6 +92,10 @@ msgid "Customer <strong>%s</strong> modified !"
 msgstr "Le client <strong>%s</strong> a été modifié !"
 
 #, python-format
+msgid "New customer <strong>%s (%s %s)</strong> created !"
+msgstr "Le nouveau client <strong>%s (%s %s)</strong> a été créé !"
+
+#, python-format
 msgid "Customer <strong>%s</strong> deleted !"
 msgstr "Le client <strong>%s</strong> a été supprimé !"
 
@@ -125,8 +129,9 @@ msgstr "Anglais"
 msgid "Welcome to Crispyforms demonstration platform"
 msgstr "Bienvenue sur la plate-forme de démonstration de Crispyforms"
 
-msgid "This is a simple demonstration site for Django and Bootstrap"
-msgstr "Simple site de démonstration de Django et Bootstrap"
+msgid ""
+"This is a simple demonstration site for Django, Crispy-forms and Bootstrap"
+msgstr "Simple site de démonstration de Django, Crispy-forms et Bootstrap"
 
 msgid "Login User"
 msgstr "Connecter Utilisateur"

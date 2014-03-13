@@ -32,7 +32,12 @@ def create_or_edit_customer(request, customer_id=None):
     form = CustomerForm(request.POST or None, instance=customer, intro=intro, submit=submit)
     if form.is_valid():
         form.save()
-        messages.info(request, _(u'Customer <strong>%s</strong> modified !') % customer)
+        if customer:
+            messages.info(request, _(u'Customer <strong>%s</strong> modified !') % customer)
+        else:
+            data = form.cleaned_data
+            messages.info(request, _(u'New customer <strong>%s (%s %s)</strong> created !') %
+                   (data['username'], data['first_name'], data['last_name']))
         return redirect('register:list')
     return render(request, 'register/edit.html', {'form': form, 'customer': customer})
 
