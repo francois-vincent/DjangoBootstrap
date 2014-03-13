@@ -22,8 +22,8 @@ def fake_username(*args):
 class CustomerFactory(factory.django.DjangoModelFactory):
     FACTORY_FOR = models.Customer
 
-    username = factory.sequence(fake_username)
-    title = factory.iterator(('MR', 'MRS', 'MS'), cycle=True)
+    username = factory.Sequence(fake_username)
+    title = factory.Iterator(('MR', 'MRS', 'MS'), cycle=True)
     first_name = factory.LazyAttribute(lambda o: o.username.split('.')[0])
     last_name = factory.LazyAttribute(lambda o: o.username.split('.')[1])
     email = factory.LazyAttribute(lambda o: o.username+'@gmail.com')

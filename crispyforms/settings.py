@@ -16,7 +16,7 @@ sys.path.insert(1, ROOT_DIR)
 SERVICE = 'ops'
 assert SERVICE in ('core', 'ops'), "Invalide service %s" % SERVICE
 
-# Name of the project (e.g GitHub repository)
+# Name of the project
 PROJECT_NAME = 'crispytest'
 
 DEBUG = True
