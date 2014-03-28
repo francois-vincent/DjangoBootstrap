@@ -11,7 +11,7 @@
 
 {% block body_page_content %}
 
-<form action="#" method="get">
+<form action="#" method="get" name="search">
     <div class="row">
       <div class="col-lg-8">
         {% if customers %}
@@ -104,5 +104,8 @@
         $('#customer_delete_url').text($('#customer_delete_url_'+id).text())
         $('#delete_modal').modal()
     };
+    window.onload = function() {
+        document.forms[0].q.focus();
+    }
 </script>
 {% endblock %}

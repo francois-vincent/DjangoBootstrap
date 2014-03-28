@@ -14,3 +14,11 @@
     {% crispy form %}
 
 {% endblock %}
+
+{% block footer_js_page %}
+<script>
+    window.onload = function() {
+        document.forms[0].username.focus();
+    }
+</script>
+{% endblock %}
