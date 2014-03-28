@@ -1,3 +1,8 @@
+.background {
+    background: #cdd9e4;
+    background-image: url("../img/zenbg-1.png"), url("../img/zenbg-2.png");
+    background-repeat: repeat-y, repeat;
+}
 
 #navbar-brand {
     color:#009ddf;

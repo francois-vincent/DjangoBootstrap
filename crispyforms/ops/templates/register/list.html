@@ -11,6 +11,7 @@
 
 {% block body_page_content %}
 
+<div class="well">
 <form action="#" method="get" name="search">
     <div class="row">
       <div class="col-lg-8">
@@ -71,6 +72,7 @@
 
 <div style="min-height: 20px">
 {% paginate using "pagination/bootstrap.html" %}
+</div>
 </div>
 
 <div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
