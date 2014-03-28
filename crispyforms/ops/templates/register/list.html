@@ -69,6 +69,10 @@
 </tbody>
 </table>
 
+<div style="min-height: 20px">
+{% paginate using "pagination/bootstrap.html" %}
+</div>
+
 <div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -88,10 +92,6 @@
   </div>
 </div>
 <div class="hidden" id="customer_delete_url"></div>
-
-<div style="min-height: 20px">
-{% paginate using "pagination/bootstrap.html" %}
-</div>
 
 {% endif %}
 
