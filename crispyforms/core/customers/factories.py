@@ -27,4 +27,3 @@ class CustomerFactory(factory.django.DjangoModelFactory):
     first_name = factory.LazyAttribute(lambda o: o.username.split('.')[0])
     last_name = factory.LazyAttribute(lambda o: o.username.split('.')[1])
     email = factory.LazyAttribute(lambda o: o.username+'@gmail.com')
-

@@ -4,3 +4,4 @@ Django==1.6.1
 south==0.8.4
 django-crispy-forms==1.4.0
 linaro-django-pagination==2.0.2
+django-reversion==1.8

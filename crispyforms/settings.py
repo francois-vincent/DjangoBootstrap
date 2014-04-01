@@ -59,6 +59,7 @@ DJANGO_APPS = (
     'south',
     'crispy_forms',
     'linaro_django_pagination',
+    'reversion',
 )
 
 if SERVICE == 'core':
