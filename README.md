@@ -38,4 +38,4 @@ A simple Django project with Bootstrap, Crispyforms and a language selector.
     python manage.py runserver
 ```
 
-and open your browser at [127.0.0.1:8000](127.0.0.1:8000)
+Then open your browser at http:127.0.0.1:8000.
