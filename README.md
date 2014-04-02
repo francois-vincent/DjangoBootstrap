@@ -5,7 +5,7 @@ A simple Django project with Bootstrap, Crispyforms and a language selector.
 
 ## Quick Start
 
-1. Create a virtualenv and enter it, then install requirements:
+1. Clone this project, create a virtualenv and enter it, then install requirements:
 
 ```
     pip install - r requirements.txt
@@ -32,7 +32,12 @@ A simple Django project with Bootstrap, Crispyforms and a language selector.
     python manage.py createinitialrevisions
 ```
 
-5. Then launch django dev server:
+5. Collect static files:
+```
+    python manage.py collectstatic
+```
+
+6. Launch django dev server:
 
 ```
     python manage.py runserver
